@@ -13,7 +13,7 @@ start = '20200101'
 pageNo = 1
 numOfRows=1000
 
-apikey='7qije2BqVky4RqxYN%2F9Y8RIJ%2BRptWy2b2LTkH%2F%2BohgqcWERlIo%2BtnVTlr5NNHmnouP93F%2BYETALrAfup%2BJClsA%3D%3D'
+apikey=''
 url = 'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson'
 params ='?ServiceKey={}&startCreateDt={}&pageNo={}&numOfRows={}'.format(apikey, start, pageNo, numOfRows)
 
