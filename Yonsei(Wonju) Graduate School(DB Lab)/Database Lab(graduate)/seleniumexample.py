@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import time
 
@@ -6,8 +7,9 @@ driver = webdriver.Chrome('/Users/j/Desktop/chromedriver')
 #driver = webdriver.PhantomJS('/Users/j/Desktop/phantomjs-2.1.1-windows/bin/phantomjs')
 driver.implicitly_wait(3)
 driver.get('https://www.bigkinds.or.kr/main.do')
-driver.find_element_by_name('searchTxt').send_keys('게임')
-driver.find_element_by_xpath("//button[@class='searchBtn']").click()
+
+driver.find_element(By.NAME, 'searchTxt').send_keys('게임')
+driver.find_element(By.XPATH, "//button[@class='searchBtn']").click()
 
 #driver.get('https://www.bigkinds.or.kr/news/newsResult.do')
 time.sleep(7)

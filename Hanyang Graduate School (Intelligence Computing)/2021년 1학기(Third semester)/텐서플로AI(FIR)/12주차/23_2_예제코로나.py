@@ -8,12 +8,15 @@ import requests
 import pandas as pd
 import xmltodict
 import streamlit as st
+import os
 
 start = '20200101'
 pageNo = 1
 numOfRows=1000
 
-apikey=''
+apikey = os.getenv('COVID_API_KEY', '')
+if not apikey:
+    raise ValueError("COVID_API_KEY 환경변수가 설정되지 않았습니다. 환경변수를 설정하거나 .env 파일을 사용하세요.")
 url = 'http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson'
 params ='?ServiceKey={}&startCreateDt={}&pageNo={}&numOfRows={}'.format(apikey, start, pageNo, numOfRows)
 
